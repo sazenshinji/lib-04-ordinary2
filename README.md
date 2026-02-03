@@ -1,6 +1,6 @@
 ## アプリケーション名
 
-ORDINARY
+lib-04-ordinary2
 
 ## 環境構築
 
