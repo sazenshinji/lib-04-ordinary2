@@ -21,9 +21,6 @@
     </div>
 
     <div class="nav-buttons">
-      <a href="{{ route('management.search') }}" class="btn-search">
-        検索
-      </a>
       <a href="{{ route('management.products') }}" class="btn-manage">
         商品管理
       </a>

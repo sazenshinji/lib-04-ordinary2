@@ -10,12 +10,21 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductManagerController extends Controller
 {
-    // 一覧画面の表示
-    public function list()
+    // 一覧画面の表示（検索も対応）
+    public function list(Request $request)
     {
-        // カテゴリを一緒に取得（N+1 対策）
-        $products = Product::with('category')->get();
-        return view('management.product_list', compact('products'));
+        $keyword = $request->query('keyword'); // ?keyword=xxx
+
+        $productsQuery = Product::with('category');
+
+        // キーワードがあれば部分一致検索
+        if (!empty($keyword)) {
+            $productsQuery->where('name', 'like', '%' . $keyword . '%');
+        }
+
+        $products = $productsQuery->get();
+
+        return view('management.product_list', compact('products', 'keyword'));
     }
 
 
@@ -56,10 +65,11 @@ class ProductManagerController extends Controller
     }
 
     // 詳細画面の表示
-    public function detail($id)
+    //暗黙バインディング版
+    public function detail(Product $product)
     {
-        // カテゴリを一緒に取得
-        $product = Product::with('category')->findOrFail($id);
+        // category を事前ロード
+        $product->load('category');
         return view('management.product_detail', compact('product'));
     }
 
@@ -82,7 +92,7 @@ class ProductManagerController extends Controller
         return view('management.product_edit', compact('product', 'categories'));
     }
     // 変更処理
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         // バリデーション（最低限）
         $request->validate([
@@ -98,7 +108,7 @@ class ProductManagerController extends Controller
         // → storage/app/public/images/xxx.jpg
 
         // DB保存
-        Product::find($request->id)->update([
+        Product::findOrFail($id)->update([
             'name' => $request->name,
             'category_id' => $request->category_id,
             'image_path' => $path,   // images/xxx.jpg

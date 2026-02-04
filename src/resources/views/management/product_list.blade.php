@@ -8,11 +8,36 @@
 
 <h1>商品一覧</h1>
 
-<div class="btn-add-area">
-    <a href="{{ route('management.products.add') }}" class="btn-add">
-        商品追加
-    </a>
+{{-- 検索 + 商品追加（横並びにする想定） --}}
+<div class="top-actions">
+    {{-- 検索フォーム：クリック or Enter で GET送信 --}}
+    <form action="{{ route('management.products') }}" method="GET" class="search-form">
+        <div class="search-box">
+            <input
+                type="text"
+                name="keyword"
+                value="{{ $keyword ?? '' }}"
+                placeholder="商品名で検索"
+                class="search-input">
+
+            {{-- 虫眼鏡ボタン（画像クリックで送信） --}}
+            <button type="submit" class="search-button" aria-label="検索">
+                <img src="{{ asset('images/search.png') }}" alt="検索" class="search-icon">
+            </button>
+        </div>
+    </form>
+
+    <div class="btn-add-area">
+        <a href="{{ route('management.products.add') }}" class="btn-add">
+            商品追加
+        </a>
+    </div>
 </div>
+
+{{-- 0件ならメッセージ、あるならテーブル --}}
+@if($products->isEmpty())
+<p class="no-result">該当する商品はありません。</p>
+@else
 
 <table border="1">
     <thead>
@@ -21,6 +46,7 @@
             <th>商品画像</th>
             <th>商品名</th>
             <th>価格</th>
+            <th>税込</th>
             <th>説明</th>
             <th>削除</th>
             <th>変更</th>
@@ -49,6 +75,10 @@
             {{-- 価格 --}}
             <td>¥{{ number_format($product->price) }}</td>
 
+            {{-- 税込 --}}
+            <td>¥{{ number_format($product->priceWithTax()) }}</td>
+
+
             {{-- 説明 --}}
             <td>{{ $product->description }}</td>
 
@@ -71,5 +101,6 @@
         @endforeach
     </tbody>
 </table>
+@endif
 
 @endsection
