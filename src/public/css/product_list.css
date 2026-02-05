@@ -20,51 +20,53 @@ table {
                                 /* セルごとに枠線が付くので、これが無いと二重線になる */
 }
 
-.top-actions{
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
+.top-actions{         /* 検索Box と「商品追加」ボタンを 横並びにする親コンテナ */
+  display: flex;        /* 子要素(検索Boxとボタン)を横並びレイアウトに */
+  align-items: center;  /* 縦方向の中央揃え(検索Boxとボタンの高さが違っても中央で揃う) */
+  gap: 16px;            /* 横並び要素の 間隔を16px空ける(検索Box <--> ボタン) */
+  margin-bottom: 16px;  /* 下に16px余白(テーブルとくっつかないように) */
+  justify-content: flex-end;  /* 子要素(検索Boxとボタン)を右寄せ */
+  margin-right: 60px;        /* 右に余白 */
 }
 
-.search-form{
-  margin: 0;
+.search-form{         /* 検索Box */
+  margin: 0;            /* <form> タグが デフォルトで持つ余白を消す */
+}                       /* ブラウザは form に勝手に margin を付けることがあるため */
+
+.search-box{              /* 入力欄と虫眼鏡を 1つの箱としてまとめる枠 */
+  display: flex;            /* input と button を 横並びにする */
+  align-items: center;      /* 中の要素を縦中央に揃える */
+  border: 1px solid #ccc; /* 薄いグレーの枠線 */
+  border-radius: 6px;       /* 角を丸くする */
+  overflow: hidden;         /* 中身がはみ出たら切る(角丸の外にはみ出さないように) */
+  height: 36px;             /* 検索ボックス全体の高さ固定 */
 }
 
-.search-box{
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  overflow: hidden;
-  height: 36px;
+.search-input{    /* テキスト入力欄の見た目調整 */
+  border: none;     /* inputの標準枠線を消す(外枠は .search-box が担当) */
+  outline: none;    /* フォーカス時の青枠を消す */
+  padding: 0 10px;  /* 左右に10px余白(文字が端にくっつかないように) */
+  width: 240px;     /* 入力欄の横幅 */
+  height: 100%;     /* 親（.search-box）の高さと同じ */
 }
 
-.search-input{
-  border: none;
-  outline: none;
-  padding: 0 10px;
-  width: 240px;
-  height: 100%;
+.search-button{           /* 虫眼鏡ボタンの見た目調整 */
+  border: none;             /* ボタンの標準枠線を消す */
+  background: #f5f5f5;    /* 薄いグレー背景 */
+  cursor: pointer;          /* マウス乗せたら「手の形」になる */
+  height: 100%;             /* 親の高さに合わせる */
+  width: 44px;              /* ボタンの横幅固定 */
+  display: flex;            /* 中の画像を中央配置する準備 */
+  align-items: center;      /* 縦中央 */
+  justify-content: center;  /* 横中央(虫眼鏡が「ど真ん中」に来る) */
 }
 
-.search-button{
-  border: none;
-  background: #f5f5f5;
-  cursor: pointer;
-  height: 100%;
-  width: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.search-icon{ /* 虫眼鏡画像サイズ */
+  width: 18px;  /*  */
+  height: 18px; /*  */
 }
 
-.search-icon{
-  width: 18px;
-  height: 18px;
-}
-
-.no-result{
-  margin-top: 12px;
-  font-weight: bold;
+.no-result{         /* 「該当する商品はありません。」の装飾 */
+  margin-top: 12px;   /* 上に少し余白 */
+  font-weight: bold;  /* 太字表示 */
 }

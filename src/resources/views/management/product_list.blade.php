@@ -22,7 +22,7 @@
 
             {{-- 虫眼鏡ボタン（画像クリックで送信） --}}
             <button type="submit" class="search-button" aria-label="検索">
-                <img src="{{ asset('images/search.png') }}" alt="検索" class="search-icon">
+                <img src="{{ asset('images/search.jpg') }}" alt="検索" class="search-icon">
             </button>
         </div>
     </form>
