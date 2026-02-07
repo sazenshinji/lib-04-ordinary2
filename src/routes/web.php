@@ -18,6 +18,10 @@ Route::prefix('management/products')->group(
         // 追加 処理
         Route::post('/create', [ProductManagerController::class, 'store'])->name('management.products.store');
 
+        // 種類一覧　画面表示
+        Route::get('/category', [ProductManagerController::class, 'category'])->name('management.products.category');
+
+
         // 詳細 画面表示 (暗黙バインディング版)
         Route::get('/detail/{product}', [ProductManagerController::class, 'detail'])->name('management.products.detail');
 
@@ -28,5 +32,6 @@ Route::prefix('management/products')->group(
         Route::get('/update/{id}', [ProductManagerController::class, 'edit'])->name('management.products.edit');
         // 変更 処理
         Route::put('/update/{id}', [ProductManagerController::class, 'update'])->name('management.products.update');
-    }
+
+        }
 );

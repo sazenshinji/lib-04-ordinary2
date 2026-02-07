@@ -4,11 +4,29 @@ h1 {
     margin: 20px 0;   /* 上下に20pxのマージン */
 }
 
-/* 商品追加ボタン */
-.btn-add-area {
-    display: flex;
-    justify-content: flex-end; /* 右寄せ */
-    margin: 20px 120px 40px 0; /* 上20px / 右120px / 下40px / 左0px のマージン*/
+.top-actions{         /* 検索Box と「商品追加」「種類一覧」ボタンを 横並びにする親コンテナ */
+  display: flex;              /* 子要素(検索Boxとボタン)を横並びレイアウトに */
+  align-items: center;        /* 縦方向の中央揃え(検索Boxとボタンの高さが違っても中央で揃う) */
+  gap: 16px;                  /* 横並び要素の 間隔を16px空ける(検索Box <--> ボタン) */
+  justify-content: flex-end;  /* 子要素(検索Boxとボタン)を右寄せ */
+  margin: 20px 60px 16px 0;   /* 上 右 下 左 */
+}
+
+/* 商品追加ボタン、種類一覧ボタン 領域指定 */
+.btn-add-area,
+.btn-category-area{
+  margin: 0;              /* 個別marginを消す */
+  display: block;         /* flex不要 */
+}
+
+/* 商品追加ボタン、種類一覧ボタン 指定 */
+.btn-add,
+.btn-category{
+  display: inline-block;      /* インライン要素のように横並び可能にしつつ */
+                              /* 幅・高さ・padding を自由に指定できる状態にする */
+  padding: 8px 14px;          /* 内側の余白（クリックできる範囲）を広げる。上下＝8px、左右＝14px */
+  border: 1px solid #333;   /* 1pxの実線の枠線を付ける。色 #333 */
+  text-decoration: none;      /* リンクの下線を消す */
 }
 
 /* テーブルを画面中央に配置 */
@@ -20,14 +38,6 @@ table {
                                 /* セルごとに枠線が付くので、これが無いと二重線になる */
 }
 
-.top-actions{         /* 検索Box と「商品追加」ボタンを 横並びにする親コンテナ */
-  display: flex;        /* 子要素(検索Boxとボタン)を横並びレイアウトに */
-  align-items: center;  /* 縦方向の中央揃え(検索Boxとボタンの高さが違っても中央で揃う) */
-  gap: 16px;            /* 横並び要素の 間隔を16px空ける(検索Box <--> ボタン) */
-  margin-bottom: 16px;  /* 下に16px余白(テーブルとくっつかないように) */
-  justify-content: flex-end;  /* 子要素(検索Boxとボタン)を右寄せ */
-  margin-right: 60px;        /* 右に余白 */
-}
 
 .search-form{         /* 検索Box */
   margin: 0;            /* <form> タグが デフォルトで持つ余白を消す */

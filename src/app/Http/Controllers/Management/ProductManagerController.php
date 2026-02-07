@@ -63,8 +63,7 @@ class ProductManagerController extends Controller
         return redirect()->route('management.products');
     }
 
-    // 詳細画面の表示
-    //暗黙バインディング版
+    // 詳細画面の表示 (暗黙バインディング版)
     public function detail(Product $product)
     {
         // category を事前ロード
@@ -117,5 +116,16 @@ class ProductManagerController extends Controller
 
         // 一覧へリダイレクト
         return redirect()->route('management.products');
+    }
+
+    // 種類一覧（カテゴリ一覧）画面表示
+    public function category()
+    {
+        // カテゴリと、そのカテゴリに属する商品をまとめて取得（N+1対策）
+        $categories = Category::with(['products' => function ($query) {
+            $query->orderBy('name'); // 表示順はお好みで
+        }])->orderBy('name')->get();
+
+        return view('management.category_list', compact('categories'));
     }
 }

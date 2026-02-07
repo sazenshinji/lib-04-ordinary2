@@ -32,6 +32,11 @@
             商品追加
         </a>
     </div>
+    <div class="btn-category-area">
+        <a href="{{ route('management.products.category') }}" class="btn-category">
+            種類一覧
+        </a>
+    </div>
 </div>
 
 {{-- 0件ならメッセージ、あるならテーブル --}}
