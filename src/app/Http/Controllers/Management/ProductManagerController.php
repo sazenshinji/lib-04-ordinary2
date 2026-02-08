@@ -122,9 +122,11 @@ class ProductManagerController extends Controller
     public function category()
     {
         // カテゴリと、そのカテゴリに属する商品をまとめて取得（N+1対策）
-        $categories = Category::with(['products' => function ($query) {
-            $query->orderBy('name'); // 表示順はお好みで
-        }])->orderBy('name')->get();
+        $categories = Category::with([
+            'products' => function ($query) {
+                $query->orderBy('name');
+            }
+        ])->orderBy('name')->get();
 
         return view('management.category_list', compact('categories'));
     }

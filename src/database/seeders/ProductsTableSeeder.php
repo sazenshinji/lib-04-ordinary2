@@ -42,82 +42,82 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert($param);
 
         $param = [
-            'name' => '焼き菓子 1',
+            'name' => '各種ディアマンクッキー',
             'category_id' => 2,                                 //焼き菓子
-            'image_path' => 'images/21_焼き菓子1.jpg',
+            'image_path' => 'images/21_ディアマンクッキー.jpg',
             'price' => 250,
-            'description' => 'ｘｘｘな 焼き菓子',
+            'description' => '各種のディアマンクッキーです。',
             'created_at' => now(),
             'updated_at' => now(),
         ];
         DB::table('products')->insert($param);
         $param = [
-            'name' => '焼き菓子 2',
+            'name' => 'キャロットケーキ',
             'category_id' => 2,                                 //焼き菓子
-            'image_path' => 'images/22_焼き菓子2.jpg',
+            'image_path' => 'images/22_キャロットケーキ.jpg',
             'price' => 300,
-            'description' => 'ｘｘｘな 焼き菓子',
+            'description' => 'ナッツでザクザク、フルーツチップでしっとりなるようにイメージしました。',
             'created_at' => now(),
             'updated_at' => now(),
         ];
         DB::table('products')->insert($param);
         $param = [
-            'name' => '焼き菓子 3',
+            'name' => '抹茶のバウンドケーキ',
             'category_id' => 2,                                 //焼き菓子
-            'image_path' => 'images/23_焼き菓子3.jpg',
-            'price' => 350,
-            'description' => 'ｘｘｘな 焼き菓子',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ];
-        DB::table('products')->insert($param);
-        $param = [
-            'name' => '焼き菓子 4',
-            'category_id' => 2,                                 //焼き菓子
-            'image_path' => 'images/24_焼き菓子4.jpg',
-            'price' => 400,
-            'description' => 'ｘｘｘな 焼き菓子',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ];
-        DB::table('products')->insert($param);
-        $param = [
-            'name' => '焼き菓子 5',
-            'category_id' => 2,                                 //焼き菓子
-            'image_path' => 'images/25_焼き菓子5.jpg',
+            'image_path' => 'images/23_抹茶のバウンドケーキ.jpg',
             'price' => 300,
-            'description' => 'ｘｘｘな 焼き菓子',
+            'description' => '抹茶のパウンドケーキです。',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ];
+        DB::table('products')->insert($param);
+        $param = [
+            'name' => 'マロンパイ',
+            'category_id' => 2,                                 //焼き菓子
+            'image_path' => 'images/24_マロンパイ.jpg',
+            'price' => 600,
+            'description' => '市果樹園さんの不揃いの栗を使わせていただき、栗の渋皮煮と栗ペーストを仕込みました。',
             'created_at' => now(),
             'updated_at' => now(),
         ];
         DB::table('products')->insert($param);
 
         $param = [
-            'name' => 'XXXのシフォンケーキ',
+            'name' => 'サツマイモのシフォンケーキ',
             'category_id' => 3,                                 //シフォンケーキ、キッシュ
-            'image_path' => 'images/31_シフォンケーキ.jpg',
+            'image_path' => 'images/31_サツマイモのシフォンケーキ.jpg',
             'price' => 500,
-            'description' => 'ｘｘｘな シフォンケーキ',
+            'description' => '不揃いの千葉県産さつまいもをつかっています。',
             'created_at' => now(),
             'updated_at' => now(),
         ];
         DB::table('products')->insert($param);
         $param = [
-            'name' => '□□のシフォンケーキ',
+            'name' => '抹茶のシフォンケーキ',
             'category_id' => 3,                                 //シフォンケーキ、キッシュ
-            'image_path' => 'images/32_シフォンケーキ.jpg',
+            'image_path' => 'images/32_抹茶のシフォンケーキ.jpg',
             'price' => 500,
-            'description' => '□□□な シフォンケーキ',
+            'description' => '大人気の抹茶のシフォンケーキです。',
             'created_at' => now(),
             'updated_at' => now(),
         ];
         DB::table('products')->insert($param);
         $param = [
-            'name' => '□□のキッシュ',
+            'name' => '3種のキノコのキッシュ',
             'category_id' => 3,                                 //シフォンケーキ、キッシュ
-            'image_path' => 'images/33_キッシュ.jpg',
+            'image_path' => 'images/33_キノコのキッシュ.jpg',
             'price' => 600,
-            'description' => '□□□な キッシュ',
+            'description' => 'キノコをバターで炒めました。',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ];
+        DB::table('products')->insert($param);
+        $param = [
+            'name' => 'ほうれん草とサーモンのキッシュ',
+            'category_id' => 3,                                 //シフォンケーキ、キッシュ
+            'image_path' => 'images/34_ほうれん草とサーモンのキッシュ.jpg',
+            'price' => 600,
+            'description' => '鮭×千葉県千葉市若葉区林さん家のほうれん草×ぷるっと卵液をお楽しみください。',
             'created_at' => now(),
             'updated_at' => now(),
         ];
@@ -128,17 +128,17 @@ class ProductsTableSeeder extends Seeder
             'category_id' => 4,                                 //パン
             'image_path' => 'images/41_ソーセージデニッシュ.jpg',
             'price' => 600,
-            'description' => 'おいしいソーセージデニッシュ',
+            'description' => 'ソーセージを包み焼き上げました。',
             'created_at' => now(),
             'updated_at' => now(),
         ];
         DB::table('products')->insert($param);
         $param = [
-            'name' => '〇〇〇パン',
+            'name' => 'ハムとチーズのクロックムッシュ',
             'category_id' => 4,                                 //パン
-            'image_path' => 'images/42_〇〇〇パン.jpg',
+            'image_path' => 'images/42_ハムとチーズのクロックムッシュ.jpg',
             'price' => 600,
-            'description' => '焼きたて〇〇〇パン',
+            'description' => 'ハムとチーズをたっぷり乗せています。',
             'created_at' => now(),
             'updated_at' => now(),
         ];
