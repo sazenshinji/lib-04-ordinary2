@@ -66,8 +66,8 @@ class ProductManagerController extends Controller
     // 詳細画面の表示 (暗黙バインディング版)
     public function detail(Product $product)
     {
-        // category を事前ロード
-        $product->load('category');
+        // category ingredient を事前ロード
+        $product->load('category', 'ingredients');
         return view('management.product_detail', compact('product'));
     }
 

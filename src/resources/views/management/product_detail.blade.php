@@ -39,6 +39,20 @@
         <span class="value">{{ $product->description }}</span>
     </div>
 
+    {{-- 材料 --}}
+    <div class="product-field">
+        <span class="label">材料</span>
+        <span class="value">
+            @if($product->ingredients->isEmpty())
+            （登録なし）
+            @else
+            @foreach($product->ingredients as $ingredient)
+            {{ $ingredient->name }}@if(!$loop->last)、@endif
+            @endforeach
+            @endif
+        </span>
+    </div>
+
 </div>
 
 @endsection
