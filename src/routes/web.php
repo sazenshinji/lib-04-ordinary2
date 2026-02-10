@@ -18,9 +18,11 @@ Route::prefix('management/products')->group(
         // 追加 処理
         Route::post('/create', [ProductManagerController::class, 'store'])->name('management.products.store');
 
-        // 種類一覧　画面表示
+        // 種類別一覧　画面表示
         Route::get('/category', [ProductManagerController::class, 'category'])->name('management.products.category');
 
+        // 材料別一覧　画面表示
+        Route::get('/ingredient', [ProductManagerController::class, 'ingredient'])->name('management.products.ingredient');
 
         // 詳細 画面表示 (暗黙バインディング版)
         Route::get('/detail/{product}', [ProductManagerController::class, 'detail'])->name('management.products.detail');

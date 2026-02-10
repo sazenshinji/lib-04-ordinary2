@@ -12,6 +12,7 @@ class CreateIngredientProductTable extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained()->cascadeOnDelete(); //製品ID
             $table->foreignId('ingredient_id')->constrained()->cascadeOnDelete(); //材料ID
+            $table->decimal('quantity', 10, 2)->default(0);                     //使用量
             $table->timestamps();
 
             $table->unique(['product_id', 'ingredient_id']);

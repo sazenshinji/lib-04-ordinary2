@@ -4,8 +4,8 @@ h1 {
     margin: 20px 0;   /* 上下に20pxのマージン */
 }
 
-/* 検索Box と「商品追加」「種類一覧」ボタンの親コンテナ */
-.top-actions{         /* 検索Box と「商品追加」「種類一覧」ボタンを 横並びにする親コンテナ */
+/* 検索Box と「商品追加」「種類別一覧」「材料別一覧」ボタンの親コンテナ */
+.top-actions{         /* 検索Box と「商品追加」「種類別一覧」ボタンを 横並びにする親コンテナ */
   display: flex;              /* 子要素(検索Boxとボタン)を横並びレイアウトに */
   align-items: center;        /* 縦方向の中央揃え(検索Boxとボタンの高さが違っても中央で揃う) */
   gap: 16px;                  /* 横並び要素の 間隔を16px空ける(検索Box <--> ボタン) */
@@ -13,16 +13,18 @@ h1 {
   margin: 20px 60px 16px 0;   /* 上 右 下 左 */
 }
 
-/* 商品追加ボタン、種類一覧ボタン 領域指定 */
+/* 商品追加ボタン、種類別一覧ボタン、材料別一覧ボタン 領域指定 */
 .btn-add-area,
-.btn-category-area{
+.btn-category-area,
+.btn-ingredient-area{
   margin: 0;              /* 個別marginを消す */
   display: block;         /* flex不要 */
 }
 
-/* 商品追加ボタン、種類一覧ボタン 指定 */
+/* 商品追加ボタン、種類別一覧ボタン、材料別一覧ボタン 指定 */
 .btn-add,
-.btn-category{
+.btn-category,
+.btn-ingredient{
   display: inline-block;      /* インライン要素のように横並び可能にしつつ */
                               /* 幅・高さ・padding を自由に指定できる状態にする */
   padding: 8px 14px;          /* 内側の余白（クリックできる範囲）を広げる。上下＝8px、左右＝14px */

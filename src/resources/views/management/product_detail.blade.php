@@ -46,9 +46,7 @@
             @if($product->ingredients->isEmpty())
             （登録なし）
             @else
-            @foreach($product->ingredients as $ingredient)
-            {{ $ingredient->name }}@if(!$loop->last)、@endif
-            @endforeach
+            {{ $product->ingredients->pluck('name')->join('、') }}
             @endif
         </span>
     </div>

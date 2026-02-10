@@ -34,7 +34,12 @@
     </div>
     <div class="btn-category-area">
         <a href="{{ route('management.products.category') }}" class="btn-category">
-            種類一覧
+            種類別一覧
+        </a>
+    </div>
+    <div class="btn-ingredient-area">
+        <a href="{{ route('management.products.ingredient') }}" class="btn-ingredient">
+            材料別一覧
         </a>
     </div>
 </div>

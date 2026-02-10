@@ -102,7 +102,7 @@ class ProductsTableSeeder extends Seeder
         ];
         DB::table('products')->insert($param);
         $param = [
-            'name' => '3種のキノコのキッシュ',
+            'name' => 'キノコのキッシュ',
             'category_id' => 3,                                 //シフォンケーキ、キッシュ
             'image_path' => 'images/33_キノコのキッシュ.jpg',
             'price' => 600,

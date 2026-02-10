@@ -118,7 +118,7 @@ class ProductManagerController extends Controller
         return redirect()->route('management.products');
     }
 
-    // 種類一覧（カテゴリ一覧）画面表示
+    // 種類別一覧 画面表示
     public function category()
     {
         // カテゴリと、そのカテゴリに属する商品をまとめて取得（N+1対策）
@@ -129,5 +129,16 @@ class ProductManagerController extends Controller
         ])->orderBy('name')->get();
 
         return view('management.category_list', compact('categories'));
+    }
+
+    // 材料別一覧 画面表示
+    public function ingredient()
+    {
+        // 材料(Ingredient)一覧と、各材料に紐づく商品(Product)、quantity（使用量）をまとめて取得
+        $ingredients = Ingredient::with(['products' => function ($q) {
+            $q->orderBy('name');
+        }])->orderBy('name')->get();
+
+        return view('management.ingredient_list', compact('ingredients'));
     }
 }
