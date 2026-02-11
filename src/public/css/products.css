@@ -9,6 +9,7 @@
   display: flex;
   gap: 20px;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .tab {
@@ -23,6 +24,19 @@
 .tab.active {
   border-bottom: 2px solid #333;
   font-weight: bold;
+}
+
+/* タブの中身（パネル） */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.empty-message {
+  padding: 10px 0;
 }
 
 /* 商品カード */
@@ -46,4 +60,13 @@
 .product-name {
   margin-top: 8px;
   font-size: 14px;
+}
+
+/* タブの中身（パネル） */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
 }
