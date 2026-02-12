@@ -1,59 +1,72 @@
 .product-page {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
+    /* 商品一覧ページ全体を包むコンテナ */
+    max-width: 1200px; /* 画面がどれだけ広くても、横幅は最大1200pxまでに制限 */
+    margin: 40px auto; /* 上下に 40px の余白、左右は auto にして 中央寄せ */
+    padding: 0 20px; /* 左右に 20px の内側余白 */
 }
 
 /* タブ */
 .tab-wrapper {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
+    /* タブ（リンク）をまとめる親要素 */
+    display: flex; /* 子要素（.tab）を 横並びにする */
+    gap: 20px; /* タブ同士の 間隔を20px 空ける */
+    margin-bottom: 30px; /* タブと商品一覧の間に 縦の余白 */
+    flex-wrap: wrap; /* タブが多くなったら 自動で折り返す */
 }
 
 .tab {
-  display: inline-block;
-  background: none;
-  border: none;
-  font-size: 16px;
-  padding: 8px 0;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
+    /* 各タブ（今回は <a> タグ） */
+    display: inline-block; /* 幅や高さを持てる padding が効く*/
+    background: none; /* 背景色を消す */
+    border: none; /* 枠線を消す */
+    font-size: 16px; /* 文字サイズを指定 */
+    padding: 8px 0; /* 上下に 8px の余白　横は0（下線デザインをきれいに） */
+    cursor: pointer; /* マウスを乗せたとき 指マーク */
+    border-bottom: 2px solid transparent; /* 下線用のスペースを先に確保 */
 
-  /* aタグ用 */
-  text-decoration: none;
-  color: inherit;
+    /* aタグ用 */
+    text-decoration: none; /* <a> タグの 下線（リンク線）を消す */
+    color: inherit; /* 親要素の文字色を引き継ぐ　（青リンクにならない） */
 }
 
 .tab.active {
-  border-bottom: 2px solid #333;
-  font-weight: bold;
+    /* 選択中のタブだけに適用 */
+    border-bottom: 2px solid #333; /* 下線を濃いグレーで表示　「今ここ」が視覚的に分かる */
+    font-weight: bold; /* 文字を太くして強調 */
 }
 
 .empty-message {
-  padding: 10px 0;
+    /* 「このカテゴリの商品はありません。」用 */
+    padding: 10px 0; /* 上下に少し余白を付ける */
 }
 
 /* 商品カード */
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 25px;
+    /* 商品カード全体の親 */
+    display: grid; /* CSS Grid を使う宣言 */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    /* 1枚のカードは最小180px */
+    /* 画面幅に応じて 入るだけ自動で並べる */
+    /* 余ったスペースは 1fr で均等配分 */
+    /* → レスポンシブなカードレイアウトになる */
+    gap: 25px; /* カード同士の間隔 */
 }
 
 .product-card {
-  text-align: center;
+    /* 商品カード1枚分 */
+    text-align: center; /* 中身（画像・文字）を中央寄せ */
 }
 
 .product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 6px;
+    /* カード内の画像 */
+    width: 100%; /* 親要素の横幅いっぱいに表示 */
+    height: 180px; /* 高さを固定 （カードごとに高さが揃う） */
+    object-fit: cover; /* 画像をトリミングして 縦横比を保ったまま埋める */
+    border-radius: 6px; /* 角を少し丸くする */
 }
 
 .product-name {
-  margin-top: 8px;
-  font-size: 14px;
+    /* 商品名テキスト */
+    margin-top: 8px; /* 画像との間に余白 */
+    font-size: 14px; /* 少し控えめな文字サイズ */
 }
